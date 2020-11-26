@@ -3,7 +3,7 @@
 #if WITH_PCL
 #include <pcl/PCLPointField.h>
 
-pcl::uint8_t toPCLDatatype(const QPointfield::PointFieldTypes& datatype)
+uint8_t toPCLDatatype(const QPointfield::PointFieldTypes& datatype)
 {
     switch(datatype)
     {
@@ -27,7 +27,7 @@ pcl::uint8_t toPCLDatatype(const QPointfield::PointFieldTypes& datatype)
     Q_ASSERT_X(false, "fromPCLDatatype", "unknown PCL pointfield");
     return pcl::PCLPointField::INT8;
 }
-QPointfield::PointFieldTypes fromPCLDatatype(const pcl::uint8_t &datatype)
+QPointfield::PointFieldTypes fromPCLDatatype(const uint8_t &datatype)
 {
     switch(datatype)
     {

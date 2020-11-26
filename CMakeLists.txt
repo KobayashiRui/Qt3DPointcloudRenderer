@@ -4,6 +4,9 @@ cmake_minimum_required(VERSION 3.0.2)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
+SET(Qt5_DIR /usr/local/Cellar/qt/5.15.1/)
+list(APPEND CMAKE_PREFIX_PATH ${Qt5_DIR})
+
 find_package(Qt5Core REQUIRED)
 find_package(Qt5Qml REQUIRED)
 find_package(Qt5Widgets REQUIRED)

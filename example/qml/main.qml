@@ -1,21 +1,21 @@
-import QtQuick 2.4
+import QtQuick 2.15
 import QtQuick.Controls 1.3
 import QtQuick.Layouts 1.1
 import QtGraphicalEffects 1.0
 import QtQuick.Scene3D 2.0
-import Qt3D.Core 2.0 as Q3D
+import Qt3D.Core 2.15 as Q3D
 import Qt3D.Render 2.0
 import Qt3D.Input 2.0
-import Qt3D.Extras 2.0
+import Qt3D.Extras 2.15
 
 import pcl 1.0
 
-ApplicationWindow {
+Item {
     id: window
-    title: qsTr("Map Visualization")
-    width: 1200
-    height: 800
-    visible: true
+    //title: qsTr("Map Visualization")
+    //width: 1200
+    //height: 800
+    //visible: true
 
     PointcloudReader {
         id: readerBunny
@@ -161,7 +161,7 @@ ApplicationWindow {
                                 }
                             }
                         }
-                        parameters: Parameter { name: "pointSize"; value: 0.7 }
+                        parameters: Parameter { name: "pointSize"; value: 10 }
                     }
                     //property Material materialPoint: PerVertexColorMaterial {}
                     components: [ pointcloudMesh, materialPoint, meshTransform, pointLayer ]
@@ -195,7 +195,7 @@ ApplicationWindow {
                             }
                         }
                         parameters: [
-                            Parameter { name: "pointSize"; value: 0.06 },
+                            Parameter { name: "pointSize"; value: 5 },
                             Parameter { name: "fieldOfView"; value: mainCamera.fieldOfView },
                             Parameter { name: "fieldOfViewVertical"; value: mainCamera.fieldOfView/mainCamera.aspectRatio },
                             Parameter { name: "nearPlane"; value: mainCamera.nearPlane },
